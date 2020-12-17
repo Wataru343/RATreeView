@@ -53,6 +53,26 @@
   [super setDelegate:self];
 }
 
+- (void)setTableViewDragDelegate:(id<UITableViewDragDelegate>)tableViewDragDelegate
+{
+  if (_tableViewDragDelegate == tableViewDragDelegate) {
+    return;
+  }
+  [super setDragDelegate:nil];
+  _tableViewDragDelegate = tableViewDragDelegate;
+  [super setDragDelegate:(id<UITableViewDragDelegate>)tableViewDragDelegate];
+}
+
+- (void)setTableViewDropDelegate:(id<UITableViewDropDelegate>)tableViewDropDelegate
+{
+  if (_tableViewDropDelegate == tableViewDropDelegate) {
+    return;
+  }
+  [super setDropDelegate:nil];
+  _tableViewDropDelegate = tableViewDropDelegate;
+  [super setDropDelegate:(id<UITableViewDropDelegate>)tableViewDropDelegate];
+}
+
 - (void)setDelegate:(id<UITableViewDelegate>)delegate
 {
   if (self.scrollViewDelegate == delegate) {
@@ -67,7 +87,9 @@
 {
   return [super respondsToSelector:aSelector]
   || (SelectorBelongsToProtocol(@protocol(UIScrollViewDelegate), aSelector) && [self.scrollViewDelegate respondsToSelector:aSelector])
-  || (SelectorBelongsToProtocol(@protocol(UITableViewDelegate), aSelector) && [self.tableViewDelegate respondsToSelector:aSelector]);
+  || (SelectorBelongsToProtocol(@protocol(UITableViewDelegate), aSelector) && [self.tableViewDelegate respondsToSelector:aSelector])
+  || (SelectorBelongsToProtocol(@protocol(UITableViewDragDelegate), aSelector) && [self.tableViewDragDelegate respondsToSelector:aSelector])
+  || (SelectorBelongsToProtocol(@protocol(UITableViewDropDelegate), aSelector) && [self.tableViewDropDelegate respondsToSelector:aSelector]);
 }
 
 - (id)forwardingTargetForSelector:(SEL)aSelector

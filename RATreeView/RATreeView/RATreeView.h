@@ -435,6 +435,11 @@ typedef enum RATreeViewRowAnimation {
  */
 - (void)treeView:(RATreeView *)treeView didUnhighlightRowForItem:(id)item;
 
+- (void)treeView:(RATreeView *)treeView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (nonnull NSArray<UIDragItem *> *)treeView:(nonnull RATreeView *)treeView itemsForBeginningDragSession:(nonnull id<UIDragSession>)session atIndexPath:(nonnull NSIndexPath *)indexPath;
+
+- (void)treeView:(nonnull RATreeView *)treeView performDropWithCoordinator:(nonnull id<UITableViewDropCoordinator>)coordinator;
 @end
 
 
@@ -551,6 +556,9 @@ typedef enum RATreeViewRowAnimation {
 - (nullable id)itemForCell:(UITableViewCell *)cell;
 - (nullable id)itemForRowAtPoint:(CGPoint)point;
 - (nullable id)itemsForRowsInRect:(CGRect)rect;
+- (nullable NSIndexPath *)indexPathForCell:(UITableViewCell *)cell;
+- (nullable __kindof UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (nullable id)itemForRowAtIndexPath:(NSIndexPath *)indexPath;
 @property (nonatomic, nullable, copy, readonly) NSArray *itemsForVisibleRows;
 
 
@@ -599,6 +607,9 @@ typedef enum RATreeViewRowAnimation {
 
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
 
+- (void)expandCollapseRow:(NSIndexPath *)indexPath;
+- (BOOL)dragInteractionEnabled;
+- (void)setDragInteractionEnabled:(BOOL)dragInteraction;
 @end
 
 NS_ASSUME_NONNULL_END

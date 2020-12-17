@@ -75,6 +75,8 @@
 
   RATableView *tableView =  [[RATableView alloc] initWithFrame:frame style:tableViewStyle];
   tableView.tableViewDelegate = (id<UITableViewDelegate>)self;
+  tableView.tableViewDragDelegate = (id<UITableViewDragDelegate>)self;
+  tableView.tableViewDropDelegate = (id<UITableViewDropDelegate>)self;
   tableView.dataSource = (id<UITableViewDataSource>)self;
   tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   tableView.backgroundColor = [UIColor clearColor];
@@ -403,6 +405,20 @@
 
 
 #pragma mark - Accessing Cells
+- (NSIndexPath *)indexPathForCell:(UITableViewCell *)cell;
+{
+  return [self.tableView indexPathForCell:cell];
+}
+
+- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return [self.tableView cellForRowAtIndexPath:indexPath];
+}
+
+- (id)itemForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return [self itemForCell:[self.tableView cellForRowAtIndexPath:indexPath]];
+}
 
 - (UITableViewCell *)cellForItem:(id)item
 {
@@ -614,6 +630,16 @@
   }
 
   return [items copy];
+}
+
+- (BOOL)dragInteractionEnabled
+{
+  return self.tableView.dragInteractionEnabled;
+}
+
+- (void)setDragInteractionEnabled:(BOOL)dragInteraction
+{
+  [self.tableView setDragInteractionEnabled:dragInteraction];
 }
 
 @end
