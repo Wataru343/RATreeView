@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0499576E2593EBEB003D8B6B /* RATreeItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0499576C2593EBEB003D8B6B /* RATreeItem.h */; };
+		0499576F2593EBEB003D8B6B /* RATreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0499576D2593EBEB003D8B6B /* RATreeItem.m */; };
 		0626D5631BF7E85200CD3B04 /* RATreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = B53B976917D3843600A05E2F /* RATreeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0626D5641BF7E85B00CD3B04 /* RABatchChanges.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F730F198D6E42006BAED0 /* RABatchChanges.h */; };
 		0626D5661BF7E85B00CD3B04 /* RATreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F7311198D6E42006BAED0 /* RATreeNode.h */; };
@@ -86,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0499576C2593EBEB003D8B6B /* RATreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeItem.h; sourceTree = "<group>"; };
+		0499576D2593EBEB003D8B6B /* RATreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeItem.m; sourceTree = "<group>"; };
 		0626D5571BF7E81E00CD3B04 /* RATreeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RATreeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0626D68B1BF8A37800CD3B04 /* RATreeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RATreeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0626D6941BF8A37800CD3B04 /* RATreeViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RATreeViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +214,8 @@
 			children = (
 				B53B976917D3843600A05E2F /* RATreeView.h */,
 				B53B976A17D3843600A05E2F /* RATreeView.m */,
+				0499576C2593EBEB003D8B6B /* RATreeItem.h */,
+				0499576D2593EBEB003D8B6B /* RATreeItem.m */,
 				B59F730E198D6E42006BAED0 /* Private Files */,
 			);
 			path = RATreeView;
@@ -296,6 +302,7 @@
 				06B623951BF8A98E0070DCA9 /* RATreeView+Enums.h in Headers */,
 				06B623961BF8A98E0070DCA9 /* RATreeView+Private.h in Headers */,
 				06B623971BF8A98E0070DCA9 /* RATreeView+RATreeNodeCollectionControllerDataSource.h in Headers */,
+				0499576E2593EBEB003D8B6B /* RATreeItem.h in Headers */,
 				06B623981BF8A98E0070DCA9 /* RATreeView+TableViewDataSource.h in Headers */,
 				06B623991BF8A98E0070DCA9 /* RATreeView+TableViewDelegate.h in Headers */,
 				06B6239B1BF8A98E0070DCA9 /* RATreeView_ClassExtension.h in Headers */,
@@ -486,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0499576F2593EBEB003D8B6B /* RATreeItem.m in Sources */,
 				0626D6A31BF8A92600CD3B04 /* RATreeView.m in Sources */,
 				0626D6A41BF8A92F00CD3B04 /* RABatchChanges.m in Sources */,
 				0626D6A51BF8A94500CD3B04 /* RATreeNode.m in Sources */,
