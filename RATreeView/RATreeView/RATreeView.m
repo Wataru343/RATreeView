@@ -33,6 +33,7 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation RATreeView
 #pragma clang diagnostic pop
 
@@ -88,6 +89,7 @@
   //self.collapsesChildRowsWhenRowCollapses = NO;
   self.rowsExpandingAnimation = RATreeViewRowAnimationTop;
   self.rowsCollapsingAnimation = RATreeViewRowAnimationBottom;
+  self.isAnimationEnabled = YES;
 }
 
 - (void)awakeFromNib
