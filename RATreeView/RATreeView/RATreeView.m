@@ -607,6 +607,11 @@
 
 #pragma mark - UIScrollView's properties
 
+- (CGPoint)contentOffset
+{
+  return self.tableView.contentOffset;
+}
+
 - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
 {
   [self.tableView setContentOffset:contentOffset animated:animated];

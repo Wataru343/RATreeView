@@ -613,7 +613,13 @@ typedef enum RATreeViewRowAnimation {
 ///------------------------------------------------
 
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
-
+- (CGPoint)contentOffset;
+- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;
+- (void)scrollRectToVisible:(CGRect)visible animated:(BOOL)animated;
+- (void)setZoomScale:(CGFloat)zoomScale animated:(BOOL)animated;
+- (void)flashScrollIndicators;
+- (void)zoomToRect:(CGRect)rect animated:(BOOL)animated;
+- (NSArray *)itemsForIndexPaths:(NSArray *)indexPaths;
 - (void)expandCollapseRow:(NSIndexPath *)indexPath;
 - (BOOL)dragInteractionEnabled;
 - (void)setDragInteractionEnabled:(BOOL)dragInteraction;
