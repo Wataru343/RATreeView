@@ -409,8 +409,8 @@
 #pragma mark - Accessing Cells
 - (NSIndexPath *)indexPathForItem:(id)item
 {
-  UITableViewCell *cell = [self cellForItem:item];
-  return [self.tableView indexPathForCell:cell];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.treeNodeCollectionController indexForItem:item] inSection:0];
+  return indexPath;
 }
 
 - (NSIndexPath *)indexPathForCell:(UITableViewCell *)cell

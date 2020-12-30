@@ -28,7 +28,6 @@
 @interface RATreeView (Private)
 
 - (RATreeNode *)treeNodeForIndexPath:(NSIndexPath *)indexPath;
-- (NSIndexPath *)indexPathForItem:(id)item;
 
 - (void)setupTreeStructure;
 
