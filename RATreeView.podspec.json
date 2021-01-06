@@ -1,6 +1,6 @@
 {
   "name": "RATreeView",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "summary": "RATreeView provide you a great support to display the tree structures on iOS.",
   "homepage": "https://github.com/Wataru343/RATreeView",
   "screenshots": "https://raw.github.com/Augustyniak/RATreeView/master/Screens/animation.gif",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Wataru343/RATreeView",
-    "tag": "v2.1.4"
+    "tag": "v2.1.5"
   },
   "platforms": {
     "ios": "9.0",
