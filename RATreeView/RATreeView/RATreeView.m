@@ -466,11 +466,16 @@
 
 #pragma mark - Scrolling the TreeView
 
+- (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated
+{
+  UITableViewScrollPosition tableViewScrollPosition = [RATreeView tableViewScrollPositionForTreeViewScrollPosition:scrollPosition];
+  [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:tableViewScrollPosition animated:animated];
+}
+
 - (void)scrollToRowForItem:(id)item atScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated
 {
   NSIndexPath *indexPath = [self indexPathForItem:item];
-  UITableViewScrollPosition tableViewScrollPosition = [RATreeView tableViewScrollPositionForTreeViewScrollPosition:scrollPosition];
-  [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:tableViewScrollPosition animated:animated];
+  [self scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:animated];
 }
 
 - (void)scrollToNearestSelectedRowAtScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated

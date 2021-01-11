@@ -572,7 +572,7 @@ typedef enum RATreeViewRowAnimation {
 ///------------------------------------------------
 /// @name Scrolling the TreeView
 ///------------------------------------------------
-
+- (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated;
 - (void)scrollToRowForItem:(id)item atScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated;
 - (void)scrollToNearestSelectedRowAtScrollPosition:(RATreeViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
