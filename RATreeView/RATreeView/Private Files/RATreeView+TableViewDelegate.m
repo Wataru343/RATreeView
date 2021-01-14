@@ -271,6 +271,27 @@
 }
 
 
+#pragma mark - Section header
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+  if ([self.delegate respondsToSelector:@selector(viewForHeader:)]) {
+    return [self.delegate viewForHeader:self];
+  }
+
+  return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+  if ([self.delegate respondsToSelector:@selector(heightForHeader:)]) {
+    return [self.delegate heightForHeader:self];
+  }
+
+  return 0;
+}
+
+
 #pragma mark - Private Helpers
 
 - (void)collapseCellForTreeNode:(RATreeNode *)treeNode informDelegate:(BOOL)informDelegate

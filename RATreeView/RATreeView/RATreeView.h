@@ -445,6 +445,8 @@ typedef enum RATreeViewRowAnimation {
 - (nonnull NSArray<UIDragItem *> *)treeView:(nonnull RATreeView *)treeView itemsForBeginningDragSession:(nonnull id<UIDragSession>)session atIndexPath:(nonnull NSIndexPath *)indexPath;
 
 - (void)treeView:(nonnull RATreeView *)treeView performDropWithCoordinator:(nonnull id<UITableViewDropCoordinator>)coordinator;
+- (UIView *)viewForHeader:(nonnull RATreeView *)treeView;
+- (CGFloat)heightForHeader:(nonnull RATreeView *)treeView;
 @end
 
 
